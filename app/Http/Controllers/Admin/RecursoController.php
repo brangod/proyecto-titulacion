@@ -16,7 +16,7 @@ class RecursoController extends Controller
      */
     public function index($tipo)
     {
-        $t = Tipo::where('nombre',$tipo)->first();
+        $t = Tipo::where('nombre',ucfirst($tipo))->first();
         return view('admin.recursos',compact('t'));
     }
 }
