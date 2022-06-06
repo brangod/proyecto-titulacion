@@ -43,10 +43,16 @@ class ListaUsuarios extends Component
             $this->cerrarmodal();
             $this->limpiar();
         } else {
+            if ($this->rolname == '') {
+                session()->flash('mensaje', 'elige un rol para asignar');
+                $this->cerrarmodal();
+                $this->limpiar();}
+            else{
             $this->user->syncRoles($this->rolname);
             session()->flash('mensaje', 'Rol Asignado Con Exito');
             $this->cerrarmodal();
             $this->limpiar();
+            }
         }
     }
     public function editar($id)
