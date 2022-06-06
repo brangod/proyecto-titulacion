@@ -15,6 +15,7 @@
                     rounded  transition ease-in-out m-0
                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     aria-label="Default select example">
+                    <option selected value="">Elige un rol</option>
                     @foreach ( $roles as $rol )
                     <option value='{{$rol->name}}'>{{$rol->name}}</option>
                     @endforeach
